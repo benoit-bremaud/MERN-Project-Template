@@ -22,6 +22,61 @@ npm start
 
 Make sure to install the required dependencies and start the project using the provided npm scripts.
 
+---
+
+## Configuration de l'Environnement
+
+Avant de démarrer le projet, suivez ces étapes pour configurer les variables d'environnement du backend :
+
+### Backend
+
+1. **Copiez et renommez le fichier `.env.example` :**
+   ```bash
+   cp server/.env.example server/.env
+   ```
+
+2. **Ouvrez le fichier `.env` nouvellement créé :**
+   - Vous trouverez des lignes commentées (#) avec des instructions pour chaque variable d'environnement.
+
+3. **Décommentez et configurez les variables d'environnement :**
+   - **NODE_ENV**: Décommentez et définissez à `development`, `test`, ou `production` selon l'environnement :
+     ```env
+     NODE_ENV=development
+     ```
+   - **APP_NAME**: Décommentez et indiquez le nom de votre application :
+     ```env
+     APP_NAME=HappiHub
+     ```
+   - **APP_URL**: Décommentez et fournissez l'URL où votre application est accessible :
+     ```env
+     APP_URL=http://localhost:5000
+     ```
+   - **PORT**: Décommentez et spécifiez le port sur lequel l'application doit écouter :
+     ```env
+     PORT=5000
+     ```
+   - **Database Settings**: Décommentez et configurez les informations de connexion pour chaque environnement (développement, test, production). Par exemple, pour le développement :
+     ```env
+     DEV_DB_HOST=localhost
+     DEV_DB_USER=dev_user
+     DEV_DB_PASS=dev_pass
+     DEV_DB_NAME=happihub_dev
+     ```
+     - **DEV_DB_HOST**: Adresse de l'hôte de la base de données de développement.
+     - **DEV_DB_USER**: Nom d'utilisateur pour la base de données de développement.
+     - **DEV_DB_PASS**: Mot de passe pour l'utilisateur de la base de données de développement.
+     - **DEV_DB_NAME**: Nom de la base de données de développement.
+
+     Répétez pour les variables **TEST_DB_HOST**, **TEST_DB_USER**, **TEST_DB_PASS**, **TEST_DB_NAME** pour les tests, et **PROD_DB_HOST**, **PROD_DB_USER**, **PROD_DB_PASS**, **PROD_DB_NAME** pour la production.
+
+4. **Sauvegardez le fichier** après avoir configuré toutes les variables selon les besoins de votre environnement.
+
+### Remarques Importantes :
+- **Ne partagez pas le fichier `.env`** contenant des informations sensibles comme les mots de passe ou les clés API dans le dépôt de code source (assurez-vous qu'il est inclus dans `.gitignore`).
+- **Assurez-vous que `NODE_ENV`** correspond bien à l'environnement courant pour éviter toute confusion ou erreur de configuration.
+
+Ces instructions garantissent que chaque développeur configure correctement l'environnement pour le développement, les tests et la production, en utilisant le même fichier `.env` tout en ajustant les paramètres spécifiques à chaque cas.
+
 ## Contributing
 
 We welcome contributions from the community! If you would like to contribute to this project, please follow these steps:
