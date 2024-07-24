@@ -1,6 +1,10 @@
+// jest.config.js
+
 module.exports = {
   testEnvironment: 'node',
-  setupFilesAfterEnv: ['./jest.setup.js'],
+  setupFilesAfterEnv: ['./tests/config/jest.setup.js'],
+  globalSetup: './tests/config/jest.globalSetup.js',
+  globalTeardown: './tests/config/jest.globalTeardown.js',
   collectCoverage: true,
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
   coverageDirectory: './coverage',
@@ -12,5 +16,5 @@ module.exports = {
       includeFailureMsg: true,
       includeSuiteFailure: true
     }]
-  ]
+  ],
 };
